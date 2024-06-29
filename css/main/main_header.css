@@ -1,0 +1,36 @@
+main.main div.header{
+    padding: 0 .5rem;
+    color: rgb(73, 80, 87);
+}
+div.header div.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.header div.title h3.title_text{
+    font-weight: normal;
+    color: rgba(73, 80, 87, 0.76);
+}
+div.header div.title h3.title_text>a{
+    color: #66598f;
+}
+div.title div.search{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+div.title div.search input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 50rem;
+    border-bottom: solid 1px rgba(73, 80, 87, 0.3);
+    padding-bottom: .3em;
+}
+div.title div.search input:focus{
+    border-bottom: solid 1px #66598f;
+}
+div.title div.search svg{
+    position: absolute;
+    right: 0;
+}

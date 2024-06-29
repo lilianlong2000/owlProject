@@ -1,0 +1,26 @@
+main.main{
+    width: 100%;
+    height: max-content;
+    background-color: #f8f9fa;
+}
+main.main div.content{
+    height: 600px;
+    width: 100%;
+    /* overflow-x: scroll; */
+}
+
+.ag-theme-balham[class^=ag-]{
+    --ag-font-size: 12px;
+    --ag-grid-size: 4px;
+    --ag-list-item-height: 40px;
+    --ag-row-height: 40px;
+    --ag-cell-horizontal-border: solid #cecece96;
+}
+
+.createDish{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 1rem;
+    cursor: pointer;
+}

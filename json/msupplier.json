@@ -1,0 +1,15 @@
+[
+    {
+        "id": 953,
+        "supply_type": "s1_meat",
+        "supplier_id": [
+            3628,
+            "\u4e07\u5fb7\u76ca_\u81ea\u8d2d"
+        ],
+        "supplier_nick_name": "\u4e07\u5fb7\u76ca_\u81ea\u8d2d",
+        "cost_category_id": [
+            986,
+            "\u8fd0\u8425\u6210\u672c"
+        ]
+    }
+]

@@ -1,0 +1,16 @@
+body,html{
+    margin: 0;
+    /* overflow: hidden; */
+}
+
+a{
+    text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+.box-border{
+    box-sizing: border-box;
+}

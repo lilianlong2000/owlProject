@@ -1,0 +1,422 @@
+[
+    {
+        "id": 989,
+        "name": "\u51b7\u51bb",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 587,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 988,
+        "name": "\u9c9c\u8089",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 587,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 990,
+        "name": "\u6c34\u4ea7",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 588,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 991,
+        "name": "\u86cb\u7c7b",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 589,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 992,
+        "name": "\u852c\u83dc",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 590,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 993,
+        "name": "\u8c46\u5236\u54c1",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 591,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 994,
+        "name": "\u4e3b\u98df",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 592,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 995,
+        "name": "\u5927\u7c73",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 592,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 996,
+        "name": "\u9762\u6761",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 592,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 997,
+        "name": "\u9992\u5934",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 592,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 998,
+        "name": "\u70b9\u5fc3",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 593,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 999,
+        "name": "\u6c34\u679c",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 594,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1000,
+        "name": "\u996e\u6599",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 594,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1001,
+        "name": "\u5e72\u8c03",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 595,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1002,
+        "name": "\u6cb9",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 596,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1003,
+        "name": "\u4e00\u6b21\u6027",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 597,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 987,
+        "name": "\u5176\u4ed6",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual_stock_in_out",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 586,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1004,
+        "name": "\u8089",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 586,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1005,
+        "name": "\u6c34\u7535",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 598,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1006,
+        "name": "\u71c3\u6c14",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 599,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "operation_costs"
+    },
+    {
+        "id": 1007,
+        "name": "\u5e02\u573a\u8d39\u7528",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 600,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "selling_expenses"
+    },
+    {
+        "id": 1008,
+        "name": "\u4eba\u5de5",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 601,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "general_and_administrative_expense"
+    },
+    {
+        "id": 1013,
+        "name": "\u529e\u516c\u8d39\u7528",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 601,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "general_and_administrative_expense"
+    },
+    {
+        "id": 1010,
+        "name": "\u623f\u79df",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 601,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "general_and_administrative_expense"
+    },
+    {
+        "id": 1011,
+        "name": "\u6298\u65e7",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 601,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "general_and_administrative_expense"
+    },
+    {
+        "id": 1012,
+        "name": "\u8bbe\u5907\u79df\u8d41\u8d39",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 601,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "general_and_administrative_expense"
+    },
+    {
+        "id": 986,
+        "name": "\u8fd0\u8425\u6210\u672c",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 601,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "general_and_administrative_expense"
+    },
+    {
+        "id": 1009,
+        "name": "\u8fd0\u8f93",
+        "cost_sequence_no": 100,
+        "is_active": true,
+        "cost_classfication": "manual",
+        "stock_in_out_type": "not_stock_in_out",
+        "rel_partner_ids": [
+            1115
+        ],
+        "cost_top_category_id": 601,
+        "default_amount": 0.0,
+        "default_amount_per_dish": 0.0,
+        "cost_type": "general_and_administrative_expense"
+    }
+]

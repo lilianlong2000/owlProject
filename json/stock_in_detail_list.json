@@ -1,0 +1,10 @@
+{
+    "fn_list": [
+        "date",
+        "material_id",
+        "purchase_unit_qty",
+        "purchase_unit_id",
+        "msupplier_id"
+    ],
+    "slist": []
+}

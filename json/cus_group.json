@@ -1,0 +1,34 @@
+[
+    {
+        "id": 3,
+        "cost_center_id": [
+            332,
+            "\u592e\u53a8"
+        ],
+        "name": "\u7a3b\u4e2d\u9053"
+    },
+    {
+        "id": 61,
+        "cost_center_id": [
+            332,
+            "\u592e\u53a8"
+        ],
+        "name": "3E\u4ea7\u4e1a\u56ed\u98df\u5802"
+    },
+    {
+        "id": 62,
+        "cost_center_id": [
+            332,
+            "\u592e\u53a8"
+        ],
+        "name": "\u5965\u6770\u98df\u5802"
+    },
+    {
+        "id": 63,
+        "cost_center_id": [
+            332,
+            "\u592e\u53a8"
+        ],
+        "name": "\u8fc8\u80dc\u98df\u5802"
+    }
+]
