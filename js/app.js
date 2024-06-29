@@ -880,6 +880,8 @@ class Root extends Component {
     let stock_obj = await fetch("./json/stock_obj.json").then((response) =>
       response.json()
     );
+    // console.log(stock_obj);
+    // console.log("00000000");
     let stock_out_detail_list = await fetch(
       "./json/stock_out_detail_list.json"
     ).then((response) => response.json());
@@ -1163,7 +1165,7 @@ class Root extends Component {
       sum_start_stock_cost += item.start_stock_cost;
       pinnedTopRow.start_stock_cost += item.start_stock_cost;
     }
-    console.log(recordData);
+    // console.log(recordData);
     this.recordData = recordData;
     this.rowData = recordData;
     this.sum_start_stock_cost = sum_start_stock_cost;
@@ -1181,6 +1183,7 @@ class Root extends Component {
       this.gridOptions.api.refreshHeader();
       this.gridOptions.api.redrawRows();
     }
+    this.rowData = [{}];
   }
   setPinnedTopRowData() {
     let pinnedTopRow = {
@@ -1337,6 +1340,92 @@ class Root extends Component {
     return _arr;
   }
 
+  //   // 左侧筛选-表单配置
+  //   get sidebarFilterForm() {
+  //     let _arr = [
+  //       {
+  //         name: "显示设置",
+  //         key: "visable",
+  //         colKey: "",
+  //         children: [
+  //           {
+  //             name: "初始库存",
+  //             id: "stock_init_qty",
+  //             reg: /^stock_init_qty$/,
+  //             user_config_key: "is_month_stock_show_start_qty",
+  //           },
+  //           {
+  //             name: "入库数量",
+  //             id: "stock_in_qty",
+  //             reg: /^stock_in_qty$/,
+  //             user_config_key: "is_month_stock_show_period_in_qty",
+  //           },
+  //           {
+  //             name: "出库数量",
+  //             id: "stock_out_qty",
+  //             reg: /^stock_out_qty$/,
+  //             user_config_key: "is_month_stock_show_period_out_qty",
+  //           },
+  //           {
+  //             name: "库存数量",
+  //             id: "stock_qty",
+  //             reg: /^stock_qty$/,
+  //             user_config_key: "is_month_stock_show_stock_qty",
+  //           },
+  //           {
+  //             name: "初始成本",
+  //             id: "start_stock_cost",
+  //             reg: /^start_stock_cost$/,
+  //             user_config_key: "is_month_stock_show_start_cost",
+  //           },
+  //           {
+  //             name: "入库成本",
+  //             id: "stock_in_cost",
+  //             reg: /^stock_in_cost$/,
+  //             user_config_key: "is_month_stock_show_period_in_cost",
+  //           },
+  //           {
+  //             name: "出库成本",
+  //             id: "stock_out_cost",
+  //             reg: /^stock_out_cost$/,
+  //             user_config_key: "is_month_stock_show_period_out_cost",
+  //           },
+  //           {
+  //             name: "库存成本",
+  //             id: "stock_cost",
+  //             reg: /^stock_cost$/,
+  //             user_config_key: "is_month_stock_show_stock_cost",
+  //           },
+  //           {
+  //             name: "采购单位",
+  //             id: "purchase_unit_name",
+  //             reg: /^purchase_unit_name$/,
+  //             user_config_key: "is_month_stock_show_purchase_unit_id",
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         name: "入库出库",
+  //         key: "other",
+  //         colKey: "",
+  //         children: [
+  //           {
+  //             name: "入库",
+  //             id: "stock_in",
+  //             reg: /^stock_in\|\|[A-Za-z0-9]/,
+  //             user_config_key: "is_month_stock_show_period_in",
+  //           },
+  //           {
+  //             name: "出库",
+  //             id: "stock_out",
+  //             reg: /^stock_out\|\|[A-Za-z0-9]/,
+  //             user_config_key: "is_month_stock_show_period_out",
+  //           },
+  //         ],
+  //       },
+  //     ];
+  //     return _arr;
+  //   }
   // 左侧筛选-表单配置
   get sidebarFilterForm() {
     let _arr = [
@@ -1346,58 +1435,64 @@ class Root extends Component {
         colKey: "",
         children: [
           {
-            name: "初始库存",
-            id: "stock_init_qty",
-            reg: /^stock_init_qty$/,
-            user_config_key: "is_month_stock_show_start_qty",
+            name: "销售额",
+            id: "main_unit_test1",
+            reg: /^main_unit_test\d{1,2}_1$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "入库数量",
-            id: "stock_in_qty",
-            reg: /^stock_in_qty$/,
-            user_config_key: "is_month_stock_show_period_in_qty",
+            name: "食材",
+            id: "main_unit_test3",
+            reg: /^main_unit_test\d{1,2}_3$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "出库数量",
-            id: "stock_out_qty",
-            reg: /^stock_out_qty$/,
-            user_config_key: "is_month_stock_show_period_out_qty",
+            name: "人工",
+            id: "main_unit_test4",
+            reg: /^main_unit_test\d{1,2}_4$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "库存数量",
-            id: "stock_qty",
-            reg: /^stock_qty$/,
-            user_config_key: "is_month_stock_show_stock_qty",
+            name: "领用",
+            id: "main_unit_test5",
+            reg: /^main_unit_test\d{1,2}_5$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "初始成本",
-            id: "start_stock_cost",
-            reg: /^start_stock_cost$/,
-            user_config_key: "is_month_stock_show_start_cost",
+            name: "其他",
+            id: "main_unit_test6",
+            reg: /^main_unit_test\d{1,2}_6$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "入库成本",
-            id: "stock_in_cost",
-            reg: /^stock_in_cost$/,
-            user_config_key: "is_month_stock_show_period_in_cost",
+            name: "成本",
+            id: "main_unit_test7",
+            reg: /^main_unit_test\d{1,2}_7$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "出库成本",
-            id: "stock_out_cost",
-            reg: /^stock_out_cost$/,
-            user_config_key: "is_month_stock_show_period_out_cost",
+            name: "食材%",
+            id: "main_unit_test8",
+            reg: /^main_unit_test\d{1,2}_8$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "库存成本",
-            id: "stock_cost",
-            reg: /^stock_cost$/,
-            user_config_key: "is_month_stock_show_stock_cost",
+            name: "人工%",
+            id: "main_unit_test9",
+            reg: /^main_unit_test\d{1,2}_9$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
           {
-            name: "采购单位",
-            id: "purchase_unit_name",
-            reg: /^purchase_unit_name$/,
-            user_config_key: "is_month_stock_show_purchase_unit_id",
+            name: "领用%",
+            id: "main_unit_test10",
+            reg: /^main_unit_test\d{1,2}_10$/,
+            user_config_key: "is_month_stock_show_period_out",
+          },
+          {
+            name: "其他%",
+            id: "main_unit_test11",
+            reg: /^main_unit_test\d{1,2}_11$/,
+            user_config_key: "is_month_stock_show_period_out",
           },
         ],
       },
@@ -1482,6 +1577,7 @@ class Root extends Component {
     let colIds = this.gridOptions.columnApi.getColumns().map((v) => {
       return v.colId;
     });
+    // console.log(colIds);
     let showColIds = [];
     let hideColIds = [];
     colIds.forEach((colId) => {
@@ -1662,11 +1758,18 @@ class Root extends Component {
     let showReg = this.checkedSidebarFilterReg;
     let flag = false;
     let alwaysShowColIds = [
-      "stock_top_loc_name_group",
-      "material_name",
-      "main_unit_name",
+      //   "stock_top_loc_name_group",
+      //   "material_name",
+      //   "main_unit_name",
+      //   "main_unit_test2",
+      "main_unit_test2",
     ]; //始终显示
-    let alwaysHideColIds = ["stock_top_loc_name"]; //始终隐藏
+    let alwaysShowColIdsReg = [
+      /^main_unit_test\d{1,2}_2$/,
+      /^main_unit_name\d{1,2}$/,
+    ]; //始终显示
+    let alwaysHideColIds = []; //始终隐藏
+    // let alwaysHideColIds = ["stock_top_loc_name"]; //始终隐藏
     if (alwaysShowColIds.includes(colId)) {
       flag = true;
       return flag;
@@ -1686,19 +1789,24 @@ class Root extends Component {
         flag = true;
       }
     });
-
-    let [type, day] = colId.split("||");
-
-    if ((type == "stock_in" || type == "stock_out") && flag) {
-      let start = Number(this.state.start);
-      let end = Number(this.state.end);
-      day = Number(day);
-      if (day >= start && day <= end) {
+    alwaysShowColIdsReg.forEach((reg) => {
+      if (reg.exec(colId + "")) {
         flag = true;
-      } else {
-        flag = false;
       }
-    }
+    });
+
+    // let [type, day] = colId.split("||");
+
+    // if ((type == "stock_in" || type == "stock_out") && flag) {
+    //   let start = Number(this.state.start);
+    //   let end = Number(this.state.end);
+    //   day = Number(day);
+    //   if (day >= start && day <= end) {
+    //     flag = true;
+    //   } else {
+    //     flag = false;
+    //   }
+    // }
     // console.log(flag);
     return flag;
   }
@@ -1727,6 +1835,44 @@ class Root extends Component {
   setColumnDefs() {
     let _this = this;
     let col = [
+      {
+        // headerName: "库位",
+        headerName: "项目名称",
+        field: "main_unit_name1",
+        // showRowGroup: "stock_top_loc_name",
+        spanHeaderHeight: true,
+        // cellRenderer: "agGroupCellRenderer",
+        // cellRendererParams:{
+        //     suppressCount: false,
+        //     innerRenderer: GroupRowInnerRenderer,
+        //     editable:false,
+        //     checkbox: false,
+        // },
+        // width: 100,
+        colSpan: (params) => {
+          // console.log(params);
+          //   if (!params.data) {
+          //     return 3;
+          //   }
+          //   if (params.node.rowPinned) {
+          //     return 3;
+          //   }
+          return 1;
+        },
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        valueGetter: (params) => {
+          if (params.node.rowPinned) {
+            // return "成本汇总（￥）";
+            return "汇总";
+          }
+          return params.data.stock_top_loc_name;
+        },
+        sortable: true, //开启排序
+        unSortIcon: true,
+      },
+      /*
       {
         headerName: "库位",
         field: "stock_top_loc_name",
@@ -1815,11 +1961,108 @@ class Root extends Component {
         },
         // sortable: false, //开启排序
         // unSortIcon: false
+      },*/
+      {
+        headerName: "销售",
+        field: "main_unit_name2",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
       },
       {
-        headerName: "主单位",
+        headerName: "成本",
+        field: "main_unit_name3",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
+      },
+      {
+        headerName: "成本%",
+        field: "main_unit_name4",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
+      },
+      {
+        headerName: "食材",
+        field: "main_unit_name5",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
+      },
+      {
+        headerName: "人工",
+        field: "main_unit_name6",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
+      },
+      {
+        headerName: "领用",
+        field: "main_unit_name7",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
+      },
+      {
+        headerName: "其他",
+        field: "main_unit_name8",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
+      },
+      {
+        headerName: "销售",
+        field: "main_unit_name9",
+        width: 60,
+        menuTabs: [],
+        pinned: "left",
+        suppressMovable: true,
+        spanHeaderHeight: true,
+        cellClassRules: {
+          bg_gray: (params) => true,
+        },
+      },
+      /**
+      {
+        headerName: "销售",
         field: "main_unit_name",
-        width: 40,
+        width: 60,
         menuTabs: [],
         pinned: "left",
         suppressMovable: true,
@@ -2061,9 +2304,12 @@ class Root extends Component {
         },
         hide: !this.isShowColId(`purchase_unit_name`),
       },
+      */
     ];
-    col = col.concat(this.setColumnDefs_days("stock_in"));
-    col = col.concat(this.setColumnDefs_days("stock_out"));
+    // col = col.concat(this.setColumnDefs_days("stock_in"));
+    // col = col.concat(this.setColumnDefs_days("stock_out"));
+
+    col = this.setRowDefs_days(col);
     console.log(col);
     return col;
   }
@@ -2078,7 +2324,7 @@ class Root extends Component {
       },
     ];
     let dayArr = getDaysArr(this.year_month);
-    // console.log(arr);
+    console.log(dayArr);
     dayArr.forEach((v) => {
       let day = new Date(v).getDate();
       let colItem = {
@@ -2087,32 +2333,32 @@ class Root extends Component {
         menuTabs: [],
         width: 50,
         // editable: key == 'stock_out',
-        editable: (params) => {
-          if (params.node.rowPinned) {
-            return false;
-          }
-          return true;
-        },
-        suppressMovable: true,
-        hide: !_this.isShowColId(`${key}||${day}`),
-        cellEditor:
-          key == "stock_out"
-            ? stockOutNumberCellEditor
-            : stockInNumberCellEditor,
-        cellEditorParams: (params) => {
-          return {
-            values: {
-              decimal: true,
-            },
-          };
-        },
-        cellClassRules: {
-          cell_border_left: (params) => {
-            return _this.isGroupFirstCell(params);
-          },
-          bg_gray: (params) => !params.data,
-        },
-        cellRenderer: cellRenderer,
+        // editable: (params) => {
+        //   if (params.node.rowPinned) {
+        //     return false;
+        //   }
+        //   return true;
+        // },
+        // suppressMovable: true,
+        // hide: !_this.isShowColId(`${key}||${day}`),
+        // cellEditor:
+        //   key == "stock_out"
+        //     ? stockOutNumberCellEditor
+        //     : stockInNumberCellEditor,
+        // cellEditorParams: (params) => {
+        //   return {
+        //     values: {
+        //       decimal: true,
+        //     },
+        //   };
+        // },
+        // cellClassRules: {
+        //   cell_border_left: (params) => {
+        //     return _this.isGroupFirstCell(params);
+        //   },
+        //   bg_gray: (params) => !params.data,
+        // },
+        // cellRenderer: cellRenderer,
         // valueFormatter:params => {
         //     if(params.node.rowPinned){
         //         return '1231231'
@@ -2128,6 +2374,97 @@ class Root extends Component {
         // },
       };
       col[0].children.push(colItem);
+    });
+    return col;
+  }
+  setRowDefs_days(col) {
+    let _this = this;
+
+    let dayArr = getDaysArr(this.year_month);
+    console.log(dayArr);
+
+    dayArr.forEach((v) => {
+      let colTemplate = {
+        headerName: "",
+        field: "",
+        menuTabs: [],
+        children: [
+          {
+            headerName: "销售额",
+            field: "main_unit_test1",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "成本",
+            field: "main_unit_test2",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "食材",
+            field: "main_unit_test3",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "人工",
+            field: "main_unit_test4",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "领用",
+            field: "main_unit_test5",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "其他",
+            field: "main_unit_test6",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "成本%",
+            field: "main_unit_test7",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "食材%",
+            field: "main_unit_test8",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "人工%",
+            field: "main_unit_test9",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "领用%",
+            field: "main_unit_test10",
+            width: 60,
+            menuTabs: [],
+          },
+          {
+            headerName: "其他%",
+            field: "main_unit_test11",
+            width: 60,
+            menuTabs: [],
+          },
+        ],
+      };
+      let day = parseInt(v.split("-")[2]);
+      colTemplate.headerName = day + "";
+      colTemplate.field = "main_unit_test" + day;
+      colTemplate.children.forEach((item, index) => {
+        item.field = colTemplate.field + "_" + (index + 1);
+        item.hide = !this.isShowColId(item.field);
+      });
+      col.push(colTemplate);
     });
     return col;
   }
