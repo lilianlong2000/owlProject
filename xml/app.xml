@@ -35,27 +35,25 @@
                     <div class="content-wrapper">
                         <div class="table-top clearfix">
                             <div class="d-flex align-items-center gap-2">
-                              
-                              
-                                <div class="dropdown">
+                                <div class="dropdown"  t-foreach="sidebarFilterForm1" t-as="item" t-key="item_index" t-if="item_index == 0">
                                   <button class="btn dropdown-toggle btn btn-outline-primary btn-xs" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    库位
+                                    <t t-esc="item.name"/>
                                   </button>
                                   <ul class="dropdown-menu" style="width:200px">
-                                     <li style="padding-left: 10px;padding-right: 10px;">
+                                      <li style="padding-left: 10px;padding-right: 10px;">
                                           <div class="form-check" style="margin-bottom: 0;min-height: auto;">
-                                            <input class="form-check-input" type="checkbox"
-                                                   t-model="state.kuweiFilterCheckAll"
-                                                   t-on-change="kuweiFilterChangeAll"/>
+                                            <input class="form-check-input" type="checkbox" t-att-name="item.key"
+                                                   t-model="state.sidebarFilterCheckAll[item.key]"
+                                                   t-on-change="sidebarFilterChangeAll"/>
                                               <label class="form-check-label">全选</label>
                                         </div>
                                     </li>
-                                    <li t-foreach="kuweiFilterForm" t-as="v" t-key="v_index" style="padding-left: 10px;padding-right: 10px;">
+                                    <li t-foreach="item.children" t-as="v" t-key="v_index" style="padding-left: 10px;padding-right: 10px;">
                                         <div class="form-check" style="margin-bottom: 0;min-height: auto;">
-                                            <input class="form-check-input" type="checkbox" t-att-name="kuwei" t-att-value="v.id"
-                                                   t-model="state.kuweiFilter[v.id]" t-on-change="kuweiFilterChange" t-att-id="'kuwei_'+v.id"/>
-                                              <label class="form-check-label" t-att-for="'kuwei_'+v.id" t-on-click="">
-                                                <t t-esc="v.name"/>
+                                            <input class="form-check-input" type="checkbox" t-att-name="item.key" t-att-value="v_index +1"
+                                                   t-model="state.sidebarFilter[item.key][v.id]" t-on-change="sidebarFilterChange1" t-att-id="item.key+'_'+v.id"/>
+                                              <label class="form-check-label" t-att-for="item.key+'_'+v.id" t-on-click="">
+                                                <t t-esc="v.name_cn || v.name"/>
                                             </label>
                                         </div>
                                     </li>
@@ -95,7 +93,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="dropdown"  t-foreach="sidebarFilterForm" t-as="item" t-key="item_index" t-if="item_index == 0">
+                                <div class="dropdown"  t-foreach="sidebarFilterForm2" t-as="item" t-key="item_index" t-if="item_index == 0">
                                   <button class="btn dropdown-toggle btn btn-outline-primary btn-xs" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <t t-esc="item.name"/>
                                   </button>
@@ -111,7 +109,7 @@
                                     <li t-foreach="item.children" t-as="v" t-key="v_index" style="padding-left: 10px;padding-right: 10px;">
                                         <div class="form-check" style="margin-bottom: 0;min-height: auto;">
                                             <input class="form-check-input" type="checkbox" t-att-name="item.key" t-att-value="v.id"
-                                                   t-model="state.sidebarFilter[item.key][v.id]" t-on-change="sidebarFilterChange" t-att-id="item.key+'_'+v.id"/>
+                                                   t-model="state.sidebarFilter[item.key][v.id]" t-on-change="sidebarFilterChange2" t-att-id="item.key+'_'+v.id"/>
                                               <label class="form-check-label" t-att-for="item.key+'_'+v.id" t-on-click="">
                                                 <t t-esc="v.name_cn || v.name"/>
                                             </label>

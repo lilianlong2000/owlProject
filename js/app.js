@@ -946,7 +946,8 @@ class Root extends Component {
       : this.LoadTestData.bind(this);
 
     let data = await load_func(this.year_month);
-
+    // console.log(data);
+    // console.log("测试数据");
     let {
       stock_in_detail_list,
       stock_obj,
@@ -1176,14 +1177,13 @@ class Root extends Component {
     // this.cellDataAvgPrice = cellDataAvgPrice;
 
     this.checkCellData(oldCellData, recordObj);
-
+    this.rowData = [{ id: 1 }, { id: 2 }, { id: 3 }];
     if (this.gridOptions) {
       this.gridOptions.api.setRowData(this.rowData);
       this.gridOptions.api.setColumnDefs(this.setColumnDefs());
       this.gridOptions.api.refreshHeader();
       this.gridOptions.api.redrawRows();
     }
-    this.rowData = [{}];
   }
   setPinnedTopRowData() {
     let pinnedTopRow = {
@@ -1292,6 +1292,30 @@ class Root extends Component {
     let sidebarFilterReg = {};
     // 设置
     this.sidebarFilterForm.forEach((v) => {
+      !sidebarFilter[v.key] && (sidebarFilter[v.key] = {});
+      !sidebarFilterReg[v.key] && (sidebarFilterReg[v.key] = {});
+      v.children.forEach((item) => {
+        let flag = true;
+        if (item.user_config_key) {
+          flag = eval("user_settings." + item.user_config_key);
+        }
+        sidebarFilter[v.key][item.id] = flag;
+        sidebarFilterReg[v.key][item.id] = item.reg || "";
+      });
+    });
+    this.sidebarFilterForm1.forEach((v) => {
+      !sidebarFilter[v.key] && (sidebarFilter[v.key] = {});
+      !sidebarFilterReg[v.key] && (sidebarFilterReg[v.key] = {});
+      v.children.forEach((item) => {
+        let flag = true;
+        if (item.user_config_key) {
+          flag = eval("user_settings." + item.user_config_key);
+        }
+        sidebarFilter[v.key][item.id] = flag;
+        sidebarFilterReg[v.key][item.id] = item.reg || "";
+      });
+    });
+    this.sidebarFilterForm2.forEach((v) => {
       !sidebarFilter[v.key] && (sidebarFilter[v.key] = {});
       !sidebarFilterReg[v.key] && (sidebarFilterReg[v.key] = {});
       v.children.forEach((item) => {
@@ -1430,7 +1454,7 @@ class Root extends Component {
   get sidebarFilterForm() {
     let _arr = [
       {
-        name: "显示设置",
+        name: "详情选择",
         key: "visable",
         colKey: "",
         children: [
@@ -1518,6 +1542,60 @@ class Root extends Component {
     ];
     return _arr;
   }
+  get sidebarFilterForm1() {
+    let _arr = [
+      {
+        name: "成本中心",
+        key: "cost_center",
+        colKey: "",
+        children: [
+          {
+            name: "食堂一",
+            id: "food_one",
+            user_config_key: "is_month_stock_show_period_in",
+          },
+          {
+            name: "食堂二",
+            id: "food_two",
+            user_config_key: "is_month_stock_show_period_in",
+          },
+          {
+            name: "食堂三",
+            id: "food_three",
+            user_config_key: "is_month_stock_show_period_in",
+          },
+        ],
+      },
+    ];
+    return _arr;
+  }
+  get sidebarFilterForm2() {
+    let _arr = [
+      {
+        name: "餐别",
+        key: "meal_category",
+        colKey: "",
+        children: [
+          {
+            name: "早餐",
+            id: "breakfast_test",
+            user_config_key: "is_month_stock_show_period_out",
+          },
+          {
+            name: "午餐",
+            id: "lunch_test",
+            user_config_key: "is_month_stock_show_period_out",
+          },
+          {
+            name: "晚餐",
+            id: "dinner_test",
+            user_config_key: "is_month_stock_show_period_out",
+          },
+        ],
+      },
+    ];
+    return _arr;
+  }
   kuweiFilterChange(e) {
     this.setFilterModel();
     e && this.isKuweiFilterCheckAll();
@@ -1557,21 +1635,22 @@ class Root extends Component {
     this.gridOptions.api.setFilterModel(filterModel);
     this.gridOptions.api.onFilterChanged();
   }
-  //左侧筛选更改-全选
-  sidebarFilterChangeAll(e) {
-    let key = e.target.name;
-    let obj = this.state.sidebarFilter[key];
-    for (let name in obj) {
-      this.state.sidebarFilter[key][name] =
-        this.state.sidebarFilterCheckAll[key];
-    }
-    this.sidebarFilterChange();
-  }
+  // //左侧筛选更改-全选
+  // sidebarFilterChangeAll(e) {
+  //   let key = e.target.name;
+  //   let obj = this.state.sidebarFilter[key];
+  //   for (let name in obj) {
+  //     this.state.sidebarFilter[key][name] =
+  //       this.state.sidebarFilterCheckAll[key];
+  //   }
+  //   this.sidebarFilterChange();
+  // }
   // 左侧筛选更改
   sidebarFilterChange(e) {
     // console.log('------sidebarFilterChange-------');
     // this.updataTableHeadCus();
     e && this.isCheckAll();
+
     this.updataCheckedSidebarFilterReg();
     // this.updateUserConfig();
     let colIds = this.gridOptions.columnApi.getColumns().map((v) => {
@@ -1603,6 +1682,93 @@ class Root extends Component {
     });
     this.update_user_settings(user_config);
   }
+
+  //左侧筛选更改-全选
+  sidebarFilterChangeAll(e) {
+    let key = e.target.name;
+    let obj = this.state.sidebarFilter[key];
+    for (let name in obj) {
+      this.state.sidebarFilter[key][name] =
+        this.state.sidebarFilterCheckAll[key];
+    }
+    switch (key) {
+      case "visable":
+        this.sidebarFilterChange();
+        break;
+      case "cost_center":
+        this.sidebarFilterChange1(this.state.sidebarFilterCheckAll[key]);
+        break;
+      case "meal_category":
+        this.sidebarFilterChange2(this.state.sidebarFilterCheckAll[key]);
+        break;
+    }
+  }
+  // 左侧筛选更改
+  sidebarFilterChange1(e) {
+    this.isCheckAll();
+    let len = this.gridOptions.rowData.length;
+    if (typeof e === "boolean") {
+      this.gridOptions.rowData = e ? [{ id: 1 }, { id: 2 }, { id: 3 }] : [];
+    } else if (typeof e === "object") {
+      let index = 0;
+      let flag = false;
+      this.gridOptions.rowData.map((item, ind) => {
+        if (item.id == e.target.value) {
+          index = ind;
+          flag = true;
+        }
+      });
+      if (e.target.checked) {
+        if (!flag) {
+          this.gridOptions.rowData.splice(index, 0, {
+            id: Number(e.target.value),
+          });
+        }
+      } else {
+        if (flag) {
+          this.gridOptions.rowData.splice(index, 1);
+        }
+      }
+    }
+    console.log(this.gridOptions.rowData);
+    this.gridOptions.api.setRowData(this.gridOptions.rowData);
+  }
+  sidebarFilterChange2(e) {
+    e && this.isCheckAll();
+    this.updataCheckedSidebarFilterReg();
+    let colIds = this.gridOptions.columnApi.getColumns().map((v) => {
+      return v.colId;
+    });
+
+    // console.log(colIds);
+    let showColIds = [];
+    let hideColIds = [];
+    colIds.forEach((colId) => {
+      if (this.isShowColId(colId)) {
+        showColIds.push(colId);
+      } else {
+        hideColIds.push(colId);
+      }
+    });
+    // console.log(showColIds);
+    this.gridOptions.columnApi.setColumnsVisible(hideColIds, false);
+    this.gridOptions.columnApi.setColumnsVisible(showColIds, true);
+    this.gridOptions.api.redrawRows();
+
+    let user_config = {};
+    this.sidebarFilterForm.forEach((v) => {
+      v.children.forEach((item) => {
+        if (item.user_config_key) {
+          user_config[item.user_config_key] =
+            this.state.sidebarFilter[v.key][item.id];
+        }
+      });
+    });
+    this.update_user_settings(user_config);
+  }
+
+  getFoodList() {}
+
   tableConfigChange() {
     this.gridOptions.api.redrawRows();
   }
@@ -1869,7 +2035,7 @@ class Root extends Component {
           }
           return params.data.stock_top_loc_name;
         },
-        sortable: true, //开启排序
+        // sortable: true, //开启排序
         unSortIcon: true,
       },
       /*
@@ -2698,6 +2864,7 @@ class Root extends Component {
     let pinnedTopRowData = this.pinnedTopRowData;
     console.log("-----SetAGOptions----");
     let grid_options = init_grid_options();
+    console.log(grid_options);
     this.gridOptions = Object.assign({}, grid_options, {
       // suppressGroupRowsSticky:false,
       // turns OFF row hover, it's on by default
